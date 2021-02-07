@@ -1,6 +1,7 @@
 package covid19;
 
 import java.util.Date;
+import java.util.Optional;
 
 import javax.validation.constraints.NotNull;
 
@@ -12,19 +13,18 @@ import covid19.dataTypes.NameType;
 import covid19.dataTypes.NumeroEtudiant;
 import covid19.dataTypes.PasswordType;
 import covid19.dataTypes.PhoneNumberType;
-import covid19.dataTypes.ValueTestCovid;
+import covid19.dataTypes.Asymptomatique;
 
 public class Etudiant extends Utilisateur{
 
 
-	TestCovid test;
 	private NumeroEtudiant numeroEtudiant;
 	
 	public Etudiant(NameType nom, FirstNameType prenom, EmailType email, PhoneNumberType numeroTel, Date dateEt,
-			IdType identifiant, PasswordType motDePass, NumeroEtudiant numeroEtudiant, TestCovid test) {
-		super(nom, prenom, email, numeroTel, dateEt, identifiant, motDePass);
+			IdType identifiant, PasswordType motDePass, NumeroEtudiant numeroEtudiant, Optional<TestCovid> test) {
+		super(nom, prenom, email, numeroTel, dateEt, identifiant, motDePass, test);
 		this.numeroEtudiant = new NumeroEtudiant();
-		this.test=new TestCovid();
+		
 	}
 	
 	public NumeroEtudiant getNumeroEtudiant() {
@@ -36,6 +36,6 @@ public class Etudiant extends Utilisateur{
 	
 	
 	public String toString() {
-		return (super.toString()+ ", Numero d'etudiant : "+getNumeroEtudiant().getNumeroEt()+ this.test.getValue());
+		return (super.toString()+ ", Numero d'etudiant : "+getNumeroEtudiant().getNumeroEt()+ getTest().get().getValue().getValue());
 	}
 }

@@ -2,6 +2,7 @@ package covid19;
 
 
 import java.io.File;
+
 import java.io.FileWriter;
 import java.util.Date;
 import java.util.Scanner;
@@ -16,7 +17,7 @@ import covid19.dataTypes.NumeroEnseignant;
 import covid19.dataTypes.NumeroEtudiant;
 import covid19.dataTypes.PasswordType;
 import covid19.dataTypes.PhoneNumberType;
-import covid19.dataTypes.ValueTestCovid;
+import covid19.dataTypes.Asymptomatique;
 
 public class TestClasse {
 
@@ -37,7 +38,7 @@ public class TestClasse {
 
 		StringBuilder sb = new StringBuilder();
 		sb.append("Fichier contenant les étudiants de la classe ainsi l'enseignant.\n");
-		Vector <Etudiant> liste = new Vector<Etudiant>();
+		Vector <Utilisateur> liste = new Vector<Utilisateur>();
 		Scanner sc = new Scanner(System.in);
 		Classe c1;
 		Etudiant et;
@@ -56,7 +57,7 @@ public class TestClasse {
 		NumeroEtudiant numEt = null;
 		NumeroEtudiant numEt2 = new NumeroEtudiant();
 		PasswordType passEns= new PasswordType(), passEt = new PasswordType(), passEt2 = new PasswordType();
-		ValueTestCovid valueEt = new ValueTestCovid(), valueEt2 = new ValueTestCovid();
+		Asymptomatique valueEt = new Asymptomatique(), valueEt2 = new Asymptomatique();
 		
 		DateType dateTes = null, dateSympt= new DateType();
 		
@@ -122,7 +123,7 @@ public class TestClasse {
 				
 				System.out.println("Valeur du Test covid :");
 				testC= sc.nextBoolean();
-				valueEt= new ValueTestCovid(testC);	 
+				valueEt= new Asymptomatique(testC);	 
 				
 				TestCovid tc = new TestCovid(dateTes, dateSympt, valueEt);
 				et= new Etudiant(nomEt, prenomEt, emailEt, numTelEt, dateEt, idEt, passEt, numEt, tc);
@@ -180,7 +181,7 @@ public class TestClasse {
 				
 				System.out.println("Valeur du Test covid :");
 				testC= sc.nextBoolean();
-				valueEt= new ValueTestCovid(testC);	 
+				valueEt= new Asymptomatique(testC);	 
 				
 				TestCovid tc = new TestCovid(dateTes, dateSympt, valueEt);
 				

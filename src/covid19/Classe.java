@@ -9,14 +9,14 @@ import covid19.dataTypes.NameType;
 import covid19.dataTypes.NumeroEnseignant;
 import covid19.dataTypes.PasswordType;
 import covid19.dataTypes.PhoneNumberType;
-import covid19.dataTypes.ValueTestCovid;
+import covid19.dataTypes.Asymptomatique;
 
 public class Classe {
 
 			// liste des eetudiants qui seront present au cours;
-			private static Vector <Etudiant> li;
+			private static Vector <Utilisateur> li;
 			
-			public Classe(Vector <Etudiant> li) {
+			public Classe(Vector <Utilisateur> li) {
 				this.li = li;
 			}
 			

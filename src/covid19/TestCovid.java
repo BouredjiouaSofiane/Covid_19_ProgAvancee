@@ -2,10 +2,11 @@ package covid19;
 
 import java.util.Date;
 
+
 import javax.validation.constraints.Past;
 
 import covid19.dataTypes.DateType;
-import covid19.dataTypes.ValueTestCovid;
+import covid19.dataTypes.Asymptomatique;
 
 public class TestCovid {
 	
@@ -13,13 +14,13 @@ public class TestCovid {
 	private static DateType dateTest;
 	@Past
 	private static DateType dateSymptomes;
-	private static ValueTestCovid value;
+	private static Asymptomatique value; // positif / négatif
 	
 	
-	public TestCovid(DateType dateTest, DateType dateSymptomes, ValueTestCovid value) {
+	public TestCovid(DateType dateTest, DateType dateSymptomes, Asymptomatique value) {
 		this.dateTest=new DateType();
 		this.dateSymptomes=new DateType();
-		this.value = new ValueTestCovid();
+		this.value = new Asymptomatique();
 	}
 	
 	public TestCovid() {
@@ -42,11 +43,11 @@ public class TestCovid {
 		TestCovid.dateSymptomes = dateSymptomes;
 	}
 
-	public static ValueTestCovid getValue() {
+	public static Asymptomatique getValue() {
 		return value;
 	}
 
-	public static void setValue(ValueTestCovid value) {
+	public static void setValue(Asymptomatique value) {
 		TestCovid.value = value;
 	}
 

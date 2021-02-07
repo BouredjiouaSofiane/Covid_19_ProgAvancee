@@ -14,6 +14,7 @@ import covid19.dataTypes.PasswordType;
 import covid19.dataTypes.PhoneNumberType;
 
 import java.util.Date;
+import java.util.Optional;
 
 public class Enseignant extends Utilisateur{
 	
@@ -21,8 +22,8 @@ public class Enseignant extends Utilisateur{
 
 	
 	public Enseignant(NameType nom, FirstNameType prenom, EmailType email, PhoneNumberType numeroTel, Date date,
-			IdType identifiant, PasswordType motDePass, NumeroEnseignant numeroEnseignant) {
-		super(nom, prenom, email, numeroTel, date, identifiant, motDePass);
+			IdType identifiant, PasswordType motDePass, NumeroEnseignant numeroEnseignant, Optional<TestCovid> test) {
+		super(nom, prenom, email, numeroTel, date, identifiant, motDePass, test);
 		this.numeroEnseignant = new NumeroEnseignant();
 	
 	}
@@ -36,6 +37,6 @@ public class Enseignant extends Utilisateur{
 	}
 	
 	public String toString() {
-		return super.toString()+", Numero enseignant : "+this.getNumeroEnseignant();
+		return super.toString()+", Numero enseignant : "+this.getNumeroEnseignant()+ getTest().get().getValue();
 	}
 }

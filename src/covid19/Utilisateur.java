@@ -1,6 +1,8 @@
 package covid19;
 
 import java.util.Date;
+import java.util.Optional;
+
 import javax.validation.constraints.NotNull;
 
 import covid19.dataTypes.DateType;
@@ -16,6 +18,8 @@ public class Utilisateur extends Personne{
 	
 	private IdType identifiant;
 	private PasswordType motDePass;
+	// atribut optionnel test;
+	private Optional <TestCovid> test;
 	
 	
 	/**
@@ -28,13 +32,33 @@ public class Utilisateur extends Personne{
 	 * @param identifiant
 	 * @param motDePass
 	 */
-	public Utilisateur(NameType nom, FirstNameType prenom, EmailType email, PhoneNumberType numeroTel, Date date, IdType identifiant, PasswordType motDePass) {
+	
+	public Utilisateur(NameType nom, FirstNameType prenom, EmailType email, PhoneNumberType numeroTel, Date date, IdType identifiant, PasswordType motDePass, Optional<TestCovid> test) {
 		super(nom, prenom, email, numeroTel, date);
 		this.identifiant= new IdType();
 		this.motDePass= new PasswordType();
+		this.test = test;
 	}
 
 	
+
+	public Optional<TestCovid> getTest() {
+		return test;
+	}
+
+
+
+	public void setTest(Optional<TestCovid> test) {
+		this.test = test;
+	}
+
+
+
+	public void setMotDePass(PasswordType motDePass) {
+		this.motDePass = motDePass;
+	}
+
+
 
 	public IdType getIdentifiant() {
 		return identifiant;

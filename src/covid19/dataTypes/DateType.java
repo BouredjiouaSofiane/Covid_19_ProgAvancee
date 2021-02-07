@@ -2,6 +2,7 @@ package covid19.dataTypes;
 
 
 import javax.validation.constraints.Past;
+
 import javax.validation.constraints.Pattern;
 import javax.validation.executable.ValidateOnExecution;
 

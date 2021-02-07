@@ -1,14 +1,14 @@
 package covid19.dataTypes;
 
-public class ValueTestCovid {
+public class Asymptomatique {
 
 	private static boolean value ;
 
-	public ValueTestCovid() {
+	public Asymptomatique() {
 		
 	}
 	
-	public ValueTestCovid(boolean value) {
+	public Asymptomatique(boolean value) {
 		this.value=value;
 	}	
 	
@@ -17,6 +17,6 @@ public class ValueTestCovid {
 	}
 	public void setValue(boolean value) {
 		this.value = value;
-	} 
+	}
 	
 }
