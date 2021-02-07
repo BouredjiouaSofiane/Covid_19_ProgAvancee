@@ -10,9 +10,9 @@ import java.util.Vector;
 
 import covid19.dataTypes.DateType;
 import covid19.dataTypes.EmailType;
-import covid19.dataTypes.FirstNameType;
+import covid19.dataTypes.FirstNameType1;
 import covid19.dataTypes.IdType;
-import covid19.dataTypes.NameType;
+import covid19.dataTypes.NameType1;
 import covid19.dataTypes.NumeroEnseignant;
 import covid19.dataTypes.NumeroEtudiant;
 import covid19.dataTypes.PasswordType;
@@ -47,8 +47,8 @@ public class TestClasse {
 		int choix;
 		boolean testC;
 		
-		NameType nomEns = new NameType(), nomEt = new NameType(), nomEt2 = new NameType();
-		FirstNameType prenomEns = new FirstNameType(), prenomEt = new FirstNameType(), prenomEt2 = new FirstNameType();
+		NameType1 nomEns = new NameType1(), nomEt = new NameType1(), nomEt2 = new NameType1();
+		FirstNameType1 prenomEns = new FirstNameType1(), prenomEt = new FirstNameType1(), prenomEt2 = new FirstNameType1();
 		EmailType emailEns = new EmailType(), emailEt = new EmailType(), emailEt2 = new EmailType();
 		PhoneNumberType numeroTelEns = new PhoneNumberType(), numTelEt = null, numTelEt2 = new PhoneNumberType();
 		Date dateEns = new Date(), dateEt= new Date(), dateEt2 = new Date();
@@ -83,11 +83,11 @@ public class TestClasse {
 				System.out.println("Ajout d'un etudiant : \n");
 				System.out.println("\n Nom :");
 				nom = sc.next();
-				nomEt= new NameType(nom);
+				nomEt= new NameType1(nom);
 				
 				System.out.println("prenom :");
 				prenom= sc.next();
-				prenomEt = new FirstNameType(prenom);
+				prenomEt = new FirstNameType1(prenom);
 				
 				System.out.println("date de naissance :");
 				dateNaiss= sc.next();
@@ -141,11 +141,11 @@ public class TestClasse {
 				{
 				System.out.println("Nom :");
 				nom = sc.next();
-				nomEt= new NameType(nom);
+				nomEt= new NameType1(nom);
 				
 				System.out.println("prenom :");
 				prenom= sc.next();
-				prenomEt = new FirstNameType(prenom);
+				prenomEt = new FirstNameType1(prenom);
 
 				System.out.println("date de naissance :");
 				dateNaiss= sc.next();

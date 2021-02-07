@@ -6,9 +6,9 @@ import java.util.Scanner;
 
 import covid19.dataTypes.DateType;
 import covid19.dataTypes.EmailType;
-import covid19.dataTypes.FirstNameType;
+import covid19.dataTypes.FirstNameType1;
 import covid19.dataTypes.IdType;
-import covid19.dataTypes.NameType;
+import covid19.dataTypes.NameType1;
 import covid19.dataTypes.NumeroEnseignant;
 import covid19.dataTypes.NumeroEtudiant;
 import covid19.dataTypes.PasswordType;
@@ -36,8 +36,8 @@ public class TestMain {
 	
 	public static void main(String[] args) {
 		// TODO Auto-generated method stub
-		NameType nom=new NameType(); 
-		FirstNameType prenom=new FirstNameType(); 
+		NameType1 nom=new NameType1(); 
+		FirstNameType1 prenom=new FirstNameType1(); 
 		EmailType email=new EmailType();
 		PhoneNumberType numeroTel=new PhoneNumberType();
 		IdType id=new IdType();

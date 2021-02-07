@@ -11,8 +11,9 @@ import javax.validation.constraints.Size;
 
 import covid19.dataTypes.DateType;
 import covid19.dataTypes.EmailType;
-import covid19.dataTypes.FirstNameType;
+import covid19.dataTypes.FirstNameType1;
 import covid19.dataTypes.NameType;
+import covid19.dataTypes.NameType1;
 import covid19.dataTypes.PhoneNumberType;
 
 
@@ -24,7 +25,7 @@ import covid19.dataTypes.PhoneNumberType;
 public class Personne {
 
 	private  NameType nom;
-	private  FirstNameType prenom;
+	private  FirstNameType1 prenom;
 	private EmailType email;
 	private PhoneNumberType numeroTel;
 	private Date date;
@@ -39,9 +40,9 @@ public class Personne {
 	 * @param numeroTel
 	 * @param dateEt
 	 */
-	public Personne(NameType nom, FirstNameType prenom, EmailType email, PhoneNumberType numeroTel, Date dateEt) {
-		this.nom=new NameType();
-		this.prenom=new FirstNameType();;
+	public Personne(NameType nom, FirstNameType1 prenom, EmailType email, PhoneNumberType numeroTel, Date dateEt) {
+		this.nom=nom;
+		this.prenom=new FirstNameType1();;
 		this.email=new EmailType();
 		this.numeroTel=new PhoneNumberType();
 		this.date=date;
@@ -55,10 +56,10 @@ public class Personne {
 		this.nom =n;
 	}
 	/************************************/
-	public FirstNameType getprenom() {
+	public FirstNameType1 getprenom() {
 		return prenom;
 	}
-	public void setprenom(FirstNameType pren) {
+	public void setprenom(FirstNameType1 pren) {
 		this.prenom =pren;
 	}	
 	/************************************/

@@ -5,9 +5,9 @@ import java.util.Vector;
 
 import covid19.dataTypes.DateType;
 import covid19.dataTypes.EmailType;
-import covid19.dataTypes.FirstNameType;
+import covid19.dataTypes.FirstNameType1;
 import covid19.dataTypes.IdType;
-import covid19.dataTypes.NameType;
+import covid19.dataTypes.NameType1;
 import covid19.dataTypes.NumeroEnseignant;
 import covid19.dataTypes.PasswordType;
 import covid19.dataTypes.PhoneNumberType;

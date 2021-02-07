@@ -7,14 +7,14 @@ import javax.validation.constraints.NotNull;
 
 import covid19.dataTypes.DateType;
 import covid19.dataTypes.EmailType;
-import covid19.dataTypes.FirstNameType;
+import covid19.dataTypes.FirstNameType1;
 import covid19.dataTypes.IdType;
-import covid19.dataTypes.NameType;
+import covid19.dataTypes.NameType1;
 import covid19.dataTypes.PasswordType;
 import covid19.dataTypes.PhoneNumberType;
 
 
-public class Utilisateur extends Personne{
+public class Utilisateur extends Personne1{
 	
 	private IdType identifiant;
 	private PasswordType motDePass;
@@ -33,7 +33,7 @@ public class Utilisateur extends Personne{
 	 * @param motDePass
 	 */
 	
-	public Utilisateur(NameType nom, FirstNameType prenom, EmailType email, PhoneNumberType numeroTel, Date date, IdType identifiant, PasswordType motDePass, Optional<TestCovid> test) {
+	public Utilisateur(NameType1 nom, FirstNameType1 prenom, EmailType email, PhoneNumberType numeroTel, Date date, IdType identifiant, PasswordType motDePass, Optional<TestCovid> test) {
 		super(nom, prenom, email, numeroTel, date);
 		this.identifiant= new IdType();
 		this.motDePass= new PasswordType();
