@@ -16,15 +16,14 @@ import covid19.dataTypes.PhoneNumberType;
 import java.util.Date;
 
 public class Enseignant extends Utilisateur{
+	
+	NumeroEnseignant numeroEnseignant;
 
 	
-	NumeroEnseignant numeroEnseignant = new NumeroEnseignant();
-
-	
-	public Enseignant(NameType nom, FirstNameType prenom, EmailType email, PhoneNumberType numeroTel, DateType date,
+	public Enseignant(NameType nom, FirstNameType prenom, EmailType email, PhoneNumberType numeroTel, Date date,
 			IdType identifiant, PasswordType motDePass, NumeroEnseignant numeroEnseignant) {
 		super(nom, prenom, email, numeroTel, date, identifiant, motDePass);
-		this.numeroEnseignant= numeroEnseignant;
+		this.numeroEnseignant = new NumeroEnseignant();
 	
 	}
 	
@@ -36,5 +35,7 @@ public class Enseignant extends Utilisateur{
 		this.numeroEnseignant =num;
 	}
 	
-	
+	public String toString() {
+		return super.toString()+", Numero enseignant : "+this.getNumeroEnseignant();
+	}
 }

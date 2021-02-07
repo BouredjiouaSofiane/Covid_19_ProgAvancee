@@ -9,6 +9,24 @@ public class PhoneNumberType {
 	@NotNull
 	@Size(min=10, max =12)
 	@Digits(fraction=0, integer=12)
-	private String numero;
+	private static String numero;
+
+	
+	public PhoneNumberType() {
+		
+	}
+
+    public PhoneNumberType(String numero) {
+		this.numero=numero;
+	}
+	
+	public String getNumero() {
+		return numero;
+	}
+
+	public void setNumero(String numero) {
+		this.numero = numero;
+	}
+	
 	
 }

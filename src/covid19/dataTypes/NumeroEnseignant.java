@@ -7,5 +7,25 @@ public class NumeroEnseignant {
  
 	@NotNull
 	@Pattern(regexp = "")
-	String numeroEns;
+	private static String numeroEns;
+
+	public NumeroEnseignant() {
+		
+	}
+	
+    public NumeroEnseignant(String numeroEns) {
+		this.numeroEns=numeroEns;
+	}
+	
+ 
+    
+	public String getNumeroEns() {
+		return numeroEns;
+	}
+
+	public void setNumeroEns(String numeroEns) {
+		this.numeroEns = numeroEns;
+	}
+	
+	
 }

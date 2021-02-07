@@ -9,7 +9,24 @@ public class EmailType {
 	@NotNull
 	@Email 
 	@Pattern(regexp="*@*")
-	private String email;
+	private static String email;
 
+	public EmailType() {
+		
+	}
+	
+	public EmailType(String email) {
+		this.email=email;
+	}
+	
+	public String getEmail() {
+		return email;
+	}
+
+	public void setEmail(String email) {
+		this.email = email;
+	}
+
+	
 	
 }

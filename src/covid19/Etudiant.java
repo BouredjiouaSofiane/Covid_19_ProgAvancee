@@ -12,16 +12,19 @@ import covid19.dataTypes.NameType;
 import covid19.dataTypes.NumeroEtudiant;
 import covid19.dataTypes.PasswordType;
 import covid19.dataTypes.PhoneNumberType;
+import covid19.dataTypes.ValueTestCovid;
 
 public class Etudiant extends Utilisateur{
 
-	String valeurTest;
-	NumeroEtudiant numeroEtudiant = new NumeroEtudiant();
+
+	TestCovid test;
+	private NumeroEtudiant numeroEtudiant;
 	
-	public Etudiant(NameType nom, FirstNameType prenom, EmailType email, PhoneNumberType numeroTel, DateType date,
-			IdType identifiant, PasswordType motDePass, NumeroEtudiant numeroEtudiant) {
-		super(nom, prenom, email, numeroTel, date, identifiant, motDePass);
-		
+	public Etudiant(NameType nom, FirstNameType prenom, EmailType email, PhoneNumberType numeroTel, Date dateEt,
+			IdType identifiant, PasswordType motDePass, NumeroEtudiant numeroEtudiant, TestCovid test) {
+		super(nom, prenom, email, numeroTel, dateEt, identifiant, motDePass);
+		this.numeroEtudiant = new NumeroEtudiant();
+		this.test=new TestCovid();
 	}
 	
 	public NumeroEtudiant getNumeroEtudiant() {
@@ -30,7 +33,9 @@ public class Etudiant extends Utilisateur{
 	public void setNumeroEtudiant(NumeroEtudiant num) {
 		this.numeroEtudiant =num;
 	}
+	
+	
 	public String toString() {
-		return this.nom+ " "+this.prenom+ " "+this.date+" "+this.email+" "+this.numeroTel+" "+this.identifiant+" "+this.numeroEtudiant+" "+this.motDePass+" ";
+		return (super.toString()+ ", Numero d'etudiant : "+getNumeroEtudiant().getNumeroEt()+ this.test.getValue());
 	}
 }

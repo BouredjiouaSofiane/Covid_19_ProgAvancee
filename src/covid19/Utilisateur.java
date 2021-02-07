@@ -11,10 +11,11 @@ import covid19.dataTypes.NameType;
 import covid19.dataTypes.PasswordType;
 import covid19.dataTypes.PhoneNumberType;
 
+
 public class Utilisateur extends Personne{
 	
-	IdType identifiant = new IdType();
-	PasswordType motDePass = new PasswordType();
+	private IdType identifiant;
+	private PasswordType motDePass;
 	
 	
 	/**
@@ -27,10 +28,10 @@ public class Utilisateur extends Personne{
 	 * @param identifiant
 	 * @param motDePass
 	 */
-	public Utilisateur(NameType nom, FirstNameType prenom, EmailType email, PhoneNumberType numeroTel, DateType date, IdType identifiant, PasswordType motDePass) {
+	public Utilisateur(NameType nom, FirstNameType prenom, EmailType email, PhoneNumberType numeroTel, Date date, IdType identifiant, PasswordType motDePass) {
 		super(nom, prenom, email, numeroTel, date);
-		this.identifiant=identifiant;
-		this.motDePass=motDePass;
+		this.identifiant= new IdType();
+		this.motDePass= new PasswordType();
 	}
 
 	
@@ -61,10 +62,18 @@ public class Utilisateur extends Personne{
 		 * a faire 
 		 */
 	}
+	//hasher le mdp
+	public void hachMdp() {
+		// a completer ..... hasher le mdp;
+		
+	}
 	
 	public void ChangeMDP(PasswordType mdp) {
 		this.motDePass = mdp;
 	}
 	
 	
+	public String toString() {
+		return super.toString() + ", Identifiant : "+this.getIdentifiant().getId()+ ", Mot de passe : "+this.getMotDePass().getPass();
+	}
 }

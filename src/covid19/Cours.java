@@ -1,11 +1,22 @@
 package covid19;
 
 import java.util.Date;
+import java.util.Vector;
+
+import covid19.dataTypes.DateType;
+import covid19.dataTypes.EmailType;
+import covid19.dataTypes.FirstNameType;
+import covid19.dataTypes.IdType;
+import covid19.dataTypes.NameType;
+import covid19.dataTypes.NumeroEnseignant;
+import covid19.dataTypes.PasswordType;
+import covid19.dataTypes.PhoneNumberType;
 
 public class Cours {
-
+//attributs du cours;
 	private String nomCours;
 	private Date date;
+	
 	
 	
 	/**
@@ -17,6 +28,7 @@ public class Cours {
 	public Cours(String nomCours, Date date) {
 		this.nomCours= nomCours;
 		this.date = date;
+	
 	}
 	
 	public String getNomCours() {

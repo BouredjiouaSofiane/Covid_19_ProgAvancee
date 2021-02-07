@@ -7,5 +7,23 @@ public class IdType {
 
 	@NotNull
 	@Pattern(regexp = "[a-zA-Z0-9_]")
-	private String id;
+	private static String id;
+
+	public IdType() {
+		
+	}
+	
+	public IdType(String id) {
+		this.id=id;
+	}
+	
+	public String getId() {
+		return id;
+	}
+
+	public void setId(String id) {
+		this.id = id;
+	}
+	
+	
 }

@@ -23,11 +23,11 @@ import covid19.dataTypes.PhoneNumberType;
  */
 public class Personne {
 
-	NameType nom = new NameType();
-	FirstNameType prenom = new FirstNameType();
-	EmailType email = new EmailType();
-	PhoneNumberType numeroTel = new PhoneNumberType();
-	DateType date = new DateType();
+	private  NameType nom;
+	private  FirstNameType prenom;
+	private EmailType email;
+	private PhoneNumberType numeroTel;
+	private Date date;
 	
 	
 	
@@ -37,13 +37,13 @@ public class Personne {
 	 * @param prenom
 	 * @param email
 	 * @param numeroTel
-	 * @param date
+	 * @param dateEt
 	 */
-	public Personne(NameType nom, FirstNameType prenom, EmailType email, PhoneNumberType numeroTel, DateType date) {
-		this.nom=nom;
-		this.prenom=prenom;
-		this.email=email;
-		this.numeroTel=numeroTel;
+	public Personne(NameType nom, FirstNameType prenom, EmailType email, PhoneNumberType numeroTel, Date dateEt) {
+		this.nom=new NameType();
+		this.prenom=new FirstNameType();;
+		this.email=new EmailType();
+		this.numeroTel=new PhoneNumberType();
 		this.date=date;
 	}
 	
@@ -69,10 +69,10 @@ public class Personne {
 		this.email =em;
 	}
 	/************************************/
-	public DateType getDate() {
+	public Date getDate() {
 		return date;
 	}
-	public void setDate(DateType d) {
+	public void setDate(Date d) {
 		this.date =d;
 	}
 	/************************************/
@@ -85,5 +85,8 @@ public class Personne {
 	/************************************/
 
 	
+	public String toString() {
+		return "Nom : "+ nom.getNom()+", Prénom : "+prenom.getPrenom()+ ", Email : "+email.getEmail()+", Date de naissance : "+date+ ", Numéro de tel : "+numeroTel.getNumero();
+	}
 	
 }

@@ -1,6 +1,22 @@
 package covid19.dataTypes;
 
-public record ValueTestCovid() {
+public class ValueTestCovid {
+
+	private static boolean value ;
+
+	public ValueTestCovid() {
+		
+	}
 	
-	static String value;
+	public ValueTestCovid(boolean value) {
+		this.value=value;
+	}	
+	
+	public boolean getValue() {
+		return value;
+	}
+	public void setValue(boolean value) {
+		this.value = value;
+	} 
+	
 }
