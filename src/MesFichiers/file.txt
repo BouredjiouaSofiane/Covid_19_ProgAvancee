@@ -1,0 +1,2 @@
+Fichier contenant les étudiants de la classe ainsi l'enseignant.
+Nom : Bouredj, Prénom : Soso, Email : bs@gmail.com, Date de naissance : null, Numéro de tel : 0695485703, Identifiant : ii12694, Mot de passe : 0000, Numero d'etudiant : ii12583covid19.dataTypes.ValueTestCovid@90f6bfd
