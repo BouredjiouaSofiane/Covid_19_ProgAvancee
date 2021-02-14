@@ -1,7 +1,7 @@
 package covid19;
 
-import java.util.Date;
 
+import java.util.Date;
 import covid19.dataTypes.EmailType;
 import covid19.dataTypes.FirstNameType1;
 import covid19.dataTypes.NameType;

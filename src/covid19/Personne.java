@@ -2,6 +2,7 @@ package covid19;
 
 import java.util.Date;
 
+
 import javax.validation.*;
 import javax.validation.constraints.Digits;
 import javax.validation.constraints.Email;
@@ -16,15 +17,15 @@ import covid19.dataTypes.NameType;
 import covid19.dataTypes.NameType1;
 import covid19.dataTypes.PhoneNumberType;
 
-
 /**
  * 
- * @author bouredjioua
+ * @author portable
  *
  */
+
 public class Personne {
 
-	private  NameType nom;
+	NameType nom = new Personne(getprenom(), getEmail(), getNumeroTel(), getDate());
 	private  FirstNameType1 prenom;
 	private EmailType email;
 	private PhoneNumberType numeroTel;
@@ -40,21 +41,22 @@ public class Personne {
 	 * @param numeroTel
 	 * @param dateEt
 	 */
-	public Personne(NameType nom, FirstNameType1 prenom, EmailType email, PhoneNumberType numeroTel, Date dateEt) {
-		this.nom=nom;
+	public Personne(FirstNameType1 prenom, EmailType email, PhoneNumberType numeroTel, Date dateEt) {
 		this.prenom=new FirstNameType1();;
 		this.email=new EmailType();
 		this.numeroTel=new PhoneNumberType();
 		this.date=date;
 	}
 	
-	
+	/*
 	public NameType getNom() {
 		return nom;
 	}
 	public void setNom(NameType n) {
 		this.nom =n;
 	}
+	
+	*/
 	/************************************/
 	public FirstNameType1 getprenom() {
 		return prenom;
@@ -87,7 +89,7 @@ public class Personne {
 
 	
 	public String toString() {
-		return "Nom : "+ nom.getNom()+", Prénom : "+prenom.getPrenom()+ ", Email : "+email.getEmail()+", Date de naissance : "+date+ ", Numéro de tel : "+numeroTel.getNumero();
+		return "Nom : "+ this.nom.toString()+", Prénom : "+prenom.getPrenom()+ ", Email : "+email.getEmail()+", Date de naissance : "+date+ ", Numéro de tel : "+numeroTel.getNumero();
 	}
 	
 }

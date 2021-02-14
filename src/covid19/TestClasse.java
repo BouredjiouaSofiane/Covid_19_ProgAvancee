@@ -2,22 +2,22 @@ package covid19;
 
 
 import java.io.File;
-
 import java.io.FileWriter;
 import java.util.Date;
+import java.util.Optional;
 import java.util.Scanner;
 import java.util.Vector;
 
+import covid19.dataTypes.Asymptomatique;
 import covid19.dataTypes.DateType;
 import covid19.dataTypes.EmailType;
 import covid19.dataTypes.FirstNameType1;
 import covid19.dataTypes.IdType;
-import covid19.dataTypes.NameType1;
+import covid19.dataTypes.NameType;
 import covid19.dataTypes.NumeroEnseignant;
 import covid19.dataTypes.NumeroEtudiant;
 import covid19.dataTypes.PasswordType;
 import covid19.dataTypes.PhoneNumberType;
-import covid19.dataTypes.Asymptomatique;
 
 public class TestClasse {
 
@@ -40,14 +40,14 @@ public class TestClasse {
 		sb.append("Fichier contenant les étudiants de la classe ainsi l'enseignant.\n");
 		Vector <Utilisateur> liste = new Vector<Utilisateur>();
 		Scanner sc = new Scanner(System.in);
-		Classe c1;
+		Promotion c1;
 		Etudiant et;
-		c1= new Classe(liste);
-		String nom, prenom, dateNaiss, email, tel, numet, id, pass, datetest, datesymp;
+		c1= new Promotion(liste);
+		String nom = null, prenom, dateNaiss, email, tel, numet, id, pass, datetest, datesymp;
 		int choix;
 		boolean testC;
 		
-		NameType1 nomEns = new NameType1(), nomEt = new NameType1(), nomEt2 = new NameType1();
+		NameType nomEns = new NameType(nom), nomEt = new NameType(nom), nomEt2 = new NameType(nom);
 		FirstNameType1 prenomEns = new FirstNameType1(), prenomEt = new FirstNameType1(), prenomEt2 = new FirstNameType1();
 		EmailType emailEns = new EmailType(), emailEt = new EmailType(), emailEt2 = new EmailType();
 		PhoneNumberType numeroTelEns = new PhoneNumberType(), numTelEt = null, numTelEt2 = new PhoneNumberType();
@@ -83,7 +83,7 @@ public class TestClasse {
 				System.out.println("Ajout d'un etudiant : \n");
 				System.out.println("\n Nom :");
 				nom = sc.next();
-				nomEt= new NameType1(nom);
+				nomEt= new NameType(nom);
 				
 				System.out.println("prenom :");
 				prenom= sc.next();
@@ -125,7 +125,7 @@ public class TestClasse {
 				testC= sc.nextBoolean();
 				valueEt= new Asymptomatique(testC);	 
 				
-				TestCovid tc = new TestCovid(dateTes, dateSympt, valueEt);
+				Optional<TestCovid> tc = Optional.ofNullable(new TestCovid(dateTes, dateSympt, valueEt));
 				et= new Etudiant(nomEt, prenomEt, emailEt, numTelEt, dateEt, idEt, passEt, numEt, tc);
 				
 				liste.add(et);
@@ -141,7 +141,7 @@ public class TestClasse {
 				{
 				System.out.println("Nom :");
 				nom = sc.next();
-				nomEt= new NameType1(nom);
+				nomEt= new NameType(nom);
 				
 				System.out.println("prenom :");
 				prenom= sc.next();
@@ -183,7 +183,7 @@ public class TestClasse {
 				testC= sc.nextBoolean();
 				valueEt= new Asymptomatique(testC);	 
 				
-				TestCovid tc = new TestCovid(dateTes, dateSympt, valueEt);
+				Optional<TestCovid> tc = Optional.ofNullable(new TestCovid(dateTes, dateSympt, valueEt));
 				
 				et= new Etudiant(nomEt, prenomEt, emailEt, numTelEt, dateEt, idEt, passEt, numEt, tc);
 						

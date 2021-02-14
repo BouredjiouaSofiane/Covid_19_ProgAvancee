@@ -11,12 +11,12 @@ import covid19.dataTypes.PasswordType;
 import covid19.dataTypes.PhoneNumberType;
 import covid19.dataTypes.Asymptomatique;
 
-public class Classe {
+public class Promotion {
 
 			// liste des eetudiants qui seront present au cours;
 			private static Vector <Utilisateur> li;
 			
-			public Classe(Vector <Utilisateur> li) {
+			public Promotion(Vector <Utilisateur> li) {
 				this.li = li;
 			}
 			
