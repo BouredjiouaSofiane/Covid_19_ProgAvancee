@@ -3,9 +3,11 @@ package covid19;
 import java.util.Date;
 import java.util.Vector;
 
+import covid19.dataTypes.CourseType;
 import covid19.dataTypes.DateType;
 import covid19.dataTypes.EmailType;
 import covid19.dataTypes.FirstNameType1;
+import covid19.dataTypes.HourType;
 import covid19.dataTypes.IdType;
 import covid19.dataTypes.NameType1;
 import covid19.dataTypes.NumeroEnseignant;
@@ -14,27 +16,26 @@ import covid19.dataTypes.PhoneNumberType;
 
 public class Cours {
 //attributs du cours;
-	private String nomCours;
-	private Date date;
-	
-	
+	private CourseType nomCours;
+	private DateType date;
+	private HourType heure;
+	  
 	
 	/**
 	 * Constructeur de la classe Cours:
 	 * @param nomCours
-	 * @param idSalle
 	 * @param date
 	 */
-	public Cours(String nomCours, Date date) {
-		this.nomCours= nomCours;
-		this.date = date;
-	
+	public Cours(CourseType nomCours, DateType date, HourType heure) {
+		nomCours = new CourseType();
+		date = new DateType();
+		
 	}
 	
-	public String getNomCours() {
+	public CourseType getNomCours() {
 		return nomCours;
 	}
-	public void setNomCours(String n) {
+	public void setNomCours(CourseType n) {
 		this.nomCours =n;
 	}
 	/*********************************/
@@ -46,11 +47,11 @@ public class Cours {
 	
 	/*********************************/
 
-	public Date getDateCours() {
+	public DateType getDateCours() {
 		return date;
 	}
 	
-	public void setIdSalle(Date d) {
+	public void setIdSalle(DateType d) {
 		this.date = d;
 	}
 	

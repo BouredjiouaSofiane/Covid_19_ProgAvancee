@@ -1,5 +1,7 @@
 
 package covid19;
+import java.util.ArrayList;
+import java.util.List;
 import java.util.Vector;
 import covid19.dataTypes.DateType;
 import covid19.dataTypes.EmailType;
@@ -20,7 +22,7 @@ public class Promotion {
 				this.li = li;
 			}
 			
-			public void afficherClasse() {
+			public void afficherPromotion() {
 				if(li.isEmpty()){
 					System.out.println("liste vide");
 				}else {
@@ -43,7 +45,7 @@ public class Promotion {
 				return false;
 			}
 			
-		/* ajouter un enseignant : 
+		// ajouter un enseignant : 
 			public boolean ajouter(Enseignant en){
 				if (en != null) {
 					if (li.contains(en)) return false;
@@ -51,17 +53,45 @@ public class Promotion {
 				} return false;
 			}
 
-		*/
-			//Supprimer un etudiant de la liste des etudiants .
-			public boolean supprimer(Etudiant etud){	
+		
+			//Supprimer un etudiant de la liste des utilisateurs .
+			public boolean supprimerEtudiant(Etudiant etud){	
 				if (etud != null) {
 					return li.remove(etud);
 				} return false;
 			}
 			
-			//Obtenir l'etudiant à l'indice i 
-			public Etudiant getEtudiant(int i){
-				if ((i < 0) || (i >= li.size())) return null;
-				return (Etudiant) li.elementAt(i);
+			//Supprimer un enseignant de la liste des utilisateurs .
+			public boolean supprimerEnseignant(IdType id){	
+				if (li.contains(id)) {
+					for(Utilisateur ut: li) {
+						
+					return li.remove(ut);
+					}
+				} return false;
+			}
+			
+			//Obtenir l'etudiant possédant l'id i  
+			public Etudiant getEtudiant(IdType i){
+				if(li.isEmpty()) System.out.println("Liste vide");
+				else {
+					for(Utilisateur ut : li) {
+						if(i.equals(ut.getIdentifiant()))
+						return (Etudiant) ut;
+					}
+				}
+				return null;
+				
+			}
+			
+			//Obtenir l'enseignant possédant l'id i 
+			public Enseignant getEnseignant(IdType i){
+					for(Utilisateur ut : li) {
+						if(i.equals(ut.getIdentifiant()))
+						return (Enseignant) ut;
+					}
+				
+				return null;
+				
 			}
 }

@@ -11,6 +11,7 @@ import java.util.Vector;
 import covid19.dataTypes.Asymptomatique;
 import covid19.dataTypes.DateType;
 import covid19.dataTypes.EmailType;
+import covid19.dataTypes.FirstNameType;
 import covid19.dataTypes.FirstNameType1;
 import covid19.dataTypes.IdType;
 import covid19.dataTypes.NameType;
@@ -26,8 +27,7 @@ public class TestClasse {
 		
 		System.out.println("  ********  Menu  ******** \n\n");
 		System.out.println("Choisissez votre opération (Entrez le numéro correspondant) :\n\n");
-		System.out.println(" *****  1 - Ajouter un etudiant. \n *****  2 - Ajouter un Enseignant. \n *****  3 - Afficher toute la classe. \n *****  4 - Quiter.");
-		//choix = sc.nextInt();
+		System.out.println(" *****  1 - Ajouter un etudiant. \n *****  2 - Ajouter un Enseignant. \n *****  3 - Afficher toute la classe. \n *****  4 - Supprimer un etudiant. \n *****  5 - Supprimer un enseignant. \n *****  6 - Quiter.");
 	}
 	
 	public static void main(String[] args) throws Exception {
@@ -43,12 +43,12 @@ public class TestClasse {
 		Promotion c1;
 		Etudiant et;
 		c1= new Promotion(liste);
-		String nom = null, prenom, dateNaiss, email, tel, numet, id, pass, datetest, datesymp;
+		String nom = null, prenom=null, dateNaiss, email, tel, numet, id, pass, datetest, datesymp;
 		int choix;
 		boolean testC;
 		
-		NameType nomEns = new NameType(nom), nomEt = new NameType(nom), nomEt2 = new NameType(nom);
-		FirstNameType1 prenomEns = new FirstNameType1(), prenomEt = new FirstNameType1(), prenomEt2 = new FirstNameType1();
+		Nomtype nomEns = new Nomtype(nom); Nomtype nomEt = new Nomtype(nom), nomEt2 = new Nomtype(nom);
+		FirstNameType prenomEns = new FirstNameType(prenom), prenomEt = new FirstNameType(prenom), prenomEt2 = new FirstNameType(prenom);
 		EmailType emailEns = new EmailType(), emailEt = new EmailType(), emailEt2 = new EmailType();
 		PhoneNumberType numeroTelEns = new PhoneNumberType(), numTelEt = null, numTelEt2 = new PhoneNumberType();
 		Date dateEns = new Date(), dateEt= new Date(), dateEt2 = new Date();
@@ -63,16 +63,16 @@ public class TestClasse {
 		
 		System.out.println("  ********  Menu  ******** \n\n");
 		System.out.println("Choisissez votre opération (Entrez le numéro correspondant) :\n\n");
-		System.out.println(" *****  1 - Ajouter un etudiant. \n *****  2 - Ajouter un Enseignant. \n *****  3 - Afficher toute la classe. \n *****  4 - Quiter.");
+		System.out.println(" *****  1 - Ajouter un etudiant. \n *****  2 - Ajouter un Enseignant. \n *****  3 - Afficher toute la classe. \n *****  4 - Supprimer un etudiant. \n *****  5 - Supprimer un enseignant. \n *****  6 - Quiter.");
 		
 		
 		try {
 			choix = sc.nextInt();
 		
 		
-		while(choix > 1 || choix < 4){
+		while(choix > 1 || choix < 6){
 			
-			if(choix < 1 || choix > 4) {
+			if(choix < 1 || choix > 6) {
 				System.out.println("\n CHOIX INCORRECTE !\n\n");
 				afficherMenu();
 				choix = sc.nextInt();
@@ -83,11 +83,11 @@ public class TestClasse {
 				System.out.println("Ajout d'un etudiant : \n");
 				System.out.println("\n Nom :");
 				nom = sc.next();
-				nomEt= new NameType(nom);
+				nomEt= new Nomtype(nom);
 				
 				System.out.println("prenom :");
 				prenom= sc.next();
-				prenomEt = new FirstNameType1(prenom);
+				prenomEt = new FirstNameType(prenom);
 				
 				System.out.println("date de naissance :");
 				dateNaiss= sc.next();
@@ -113,17 +113,19 @@ public class TestClasse {
 				pass= sc.next();
 				passEt = new PasswordType(pass);
 				
-				System.out.println("Date Test covid :");
-				datetest= sc.next();
-				dateTes= new DateType(datetest);
-				
-				System.out.println("Date symptomes du covid :");
-				datesymp= sc.next();
-				dateSympt= new DateType(datesymp);
-				
 				System.out.println("Valeur du Test covid :");
 				testC= sc.nextBoolean();
 				valueEt= new Asymptomatique(testC);	 
+				
+				if(testC==true){					
+					System.out.println("Date Test covid :");
+					datetest= sc.next();
+					dateTes= new DateType(datetest);
+					
+					System.out.println("Date symptomes du covid :");
+					datesymp= sc.next();
+					dateSympt= new DateType(datesymp);
+				}
 				
 				Optional<TestCovid> tc = Optional.ofNullable(new TestCovid(dateTes, dateSympt, valueEt));
 				et= new Etudiant(nomEt, prenomEt, emailEt, numTelEt, dateEt, idEt, passEt, numEt, tc);
@@ -141,11 +143,11 @@ public class TestClasse {
 				{
 				System.out.println("Nom :");
 				nom = sc.next();
-				nomEt= new NameType(nom);
+				nomEt= new Nomtype(nom);
 				
 				System.out.println("prenom :");
 				prenom= sc.next();
-				prenomEt = new FirstNameType1(prenom);
+				prenomEt = new FirstNameType(prenom);
 
 				System.out.println("date de naissance :");
 				dateNaiss= sc.next();
@@ -196,12 +198,31 @@ public class TestClasse {
 			}break;
 			
 			case 3 :{
-				c1.afficherClasse();
+				c1.afficherPromotion();
 				afficherMenu();
 				choix = sc.nextInt();
 			}break;
+			case 4: {
+				System.out.println("Rentrer l'Id de l'etudiant à supprimer ?");
+				String ident =null;
+				ident=sc.next();
+				idEt2 = new IdType(ident);
+				c1.supprimerEnseignant(idEt2);
+				afficherMenu();
+				choix = sc.nextInt();
+			}
+			break;
 			
-			case 4 :{
+			case 5 :{
+				System.out.println("Rentrer l'Id de l'enseignant à supprimer ?");
+				String ident =null;
+				ident=sc.next();
+				idEt2 = new IdType(ident);
+				c1.supprimerEnseignant(idEt2);
+				afficherMenu();
+				choix = sc.nextInt();
+			}
+			case 6 :{
 				System.out.println("\n Merci, au revoir ! *******");
 				sc.close();
 				fr.flush();
@@ -217,7 +238,6 @@ public class TestClasse {
 		} catch (Exception e) {
 			throw new Exception(" !!!!!!!    Vous devez rentrez un nombre   !!!!!!!");
 		}
-		
 		
 		//nomEt.setNom("sofiane"); nomEt2.setNom("anas");nomEns.setNom("Soto");
 		//prenomEt.setPrenom("soso"); prenomEt2.setPrenom("iuyu"); prenomEns.setPrenom("michel");

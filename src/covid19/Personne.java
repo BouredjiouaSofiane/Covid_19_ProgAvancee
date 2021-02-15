@@ -9,9 +9,9 @@ import javax.validation.constraints.Email;
 import javax.validation.constraints.NotNull;
 import javax.validation.constraints.Pattern;
 import javax.validation.constraints.Size;
-
 import covid19.dataTypes.DateType;
 import covid19.dataTypes.EmailType;
+import covid19.dataTypes.FirstNameType;
 import covid19.dataTypes.FirstNameType1;
 import covid19.dataTypes.NameType;
 import covid19.dataTypes.NameType1;
@@ -24,9 +24,10 @@ import covid19.dataTypes.PhoneNumberType;
  */
 
 public class Personne {
-
-	NameType nom = new Personne(getprenom(), getEmail(), getNumeroTel(), getDate());
-	private  FirstNameType1 prenom;
+	String nom1=null;
+	String prenom1 =null;
+	Nomtype nom = new Nomtype(nom1);
+	private  FirstNameType prenom;
 	private EmailType email;
 	private PhoneNumberType numeroTel;
 	private Date date;
@@ -41,8 +42,9 @@ public class Personne {
 	 * @param numeroTel
 	 * @param dateEt
 	 */
-	public Personne(FirstNameType1 prenom, EmailType email, PhoneNumberType numeroTel, Date dateEt) {
-		this.prenom=new FirstNameType1();;
+	public Personne(Nomtype nom, FirstNameType prenom, EmailType email, PhoneNumberType numeroTel, Date dateEt) {
+		
+		this.prenom=new FirstNameType(prenom1);
 		this.email=new EmailType();
 		this.numeroTel=new PhoneNumberType();
 		this.date=date;
@@ -58,10 +60,10 @@ public class Personne {
 	
 	*/
 	/************************************/
-	public FirstNameType1 getprenom() {
+	public FirstNameType getprenom() {
 		return prenom;
 	}
-	public void setprenom(FirstNameType1 pren) {
+	public void setprenom(FirstNameType pren) {
 		this.prenom =pren;
 	}	
 	/************************************/
@@ -89,7 +91,7 @@ public class Personne {
 
 	
 	public String toString() {
-		return "Nom : "+ this.nom.toString()+", Prénom : "+prenom.getPrenom()+ ", Email : "+email.getEmail()+", Date de naissance : "+date+ ", Numéro de tel : "+numeroTel.getNumero();
+		return "Nom : "+ nom.getClass().getRecordComponents()+", Prénom : "+prenom.getClass().getRecordComponents().toString()+ ", Email : "+email.getEmail()+", Date de naissance : "+date+ ", Numéro de tel : "+numeroTel.getNumero();
 	}
 	
 }

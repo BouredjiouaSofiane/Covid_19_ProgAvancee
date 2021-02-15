@@ -1,2 +1,2 @@
 Fichier contenant les étudiants de la classe ainsi l'enseignant.
-Nom : NameType[nom=Bouredjioua], Prénom : Sofiane, Email : bouredjiouaSofiane@gmail.com, Date de naissance : null, Numéro de tel : 0000000000, Identifiant : iI12584, Mot de passe : 0000, Numero d'etudiant : iI12574true
+Nom : [Ljava.lang.reflect.RecordComponent;@9807454, Prénom : [Ljava.lang.reflect.RecordComponent;@3d494fbf, Email : bsps@gmail.com, Date de naissance : null, Numéro de tel : 009988779800, Identifiant : ii12583, Mot de passe : 00998877, Numero d'etudiant : ii12583, Valeur du test covid :false
